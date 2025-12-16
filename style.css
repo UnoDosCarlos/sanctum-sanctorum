@@ -9,9 +9,22 @@
       interpolate-size: allow-keywords;
     }
   }
+
+  @font-face {
+    font-family: "astrion-reverse";
+    src: url(./Fonts/Astrion\ Reverse.woff2);
+  }
+
+
+
+
+
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: rgb(117, 34, 34);
+    display: grid;
+    justify-content: center;
   }
   img, picture, video, canvas, svg {
     display: block;
@@ -32,4 +45,59 @@ font-size: 100%;
   }
   #root, #__next {
     isolation: isolate;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: 200px 50px 1fr;
+    width: 170vh;
+    height: 100vh;
+    background-color: rgb(80, 53, 36);
+  }
+
+  .top-section {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    align-content: center;
+    justify-self: center;
+    background: #1a1a1a;
+    width: 1400px;
+    height: auto;
+    margin: 16px;
+
+  }
+
+  .top-section > img {
+    width: 160px;
+  }
+
+  .top-section > h1 {
+    font-family: "astrion-reverse";
+    align-self: center;
+    color: goldenrod;
+    font-size: 68px;
+  }
+
+   .container > button {
+    width:100px;
+    height:50px;
+  }
+
+
+  .bottom-section {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns:  repeat(4, 1fr);
+  }
+
+  .book-card {
+    background-color: white;
+    width: 300px;
+    height: 250px;
+  }
+
+  .book-card > button {
+    width:100px;
+    height:50px;
   }
