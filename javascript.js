@@ -44,7 +44,6 @@ readBtn.addEventListener('click', () => {
 });
 
 
-
 const myLibrary = [];
 
 function Tome(title, author,description) {
@@ -56,8 +55,6 @@ function Tome(title, author,description) {
 
 
 
-
-
 function addTomeToLibrary () {
     const title = inputTitle.value;
     const author = inputAuthor.value;
@@ -65,6 +62,7 @@ function addTomeToLibrary () {
 
     const newTome = new Tome(title,author,description);
     let tome = document.createElement('div');
+    const removeBtn = document.createElement('button');
     const tomeTitle = document.createElement('h3');
     const tomeAuthor = document.createElement('h4');
     const tomeDesc = document.createElement('p');
@@ -91,10 +89,13 @@ function addTomeToLibrary () {
     tomeDesc.textContent += newTome.description;
     tomeBtn.textContent = 'Read';
     tomeBtn.id = 'tomeBtn';
+    removeBtn.textContent ='x';
+    removeBtn.id = 'removeBtn';
 
     tome.classList.add('tome-card');
     tome.classList.add('visible');
     bottomSection.appendChild(tome);
+    tome.appendChild(removeBtn);
     tome.appendChild(tomeTitle);
     tome.appendChild(tomeAuthor);
     tome.appendChild(tomeDesc);
@@ -112,5 +113,8 @@ function addTomeToLibrary () {
         
     });
 
+    removeBtn.addEventListener('click', () => {
 
+        bottomSection.removeChild(tome);
+    })
 };
