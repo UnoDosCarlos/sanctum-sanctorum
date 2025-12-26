@@ -51,13 +51,9 @@ function Tome(title, author,description) {
     this.title = title;
     this.author = author;
     this.description = description;
-  // this.id = addId();
+    this.id;
 };
 
-Tome.prototype.addId = function() {
-    let tomeID = crypto.randomUUID()
-    return tomeID;
-};
 
 
 
@@ -74,6 +70,22 @@ function addTomeToLibrary () {
     const tomeDesc = document.createElement('p');
     const tomeBtn = document.createElement('button');
 
+    function createTomeID() {
+        let tomeID;
+        if(tomeID === true) {
+            tomeID = '';
+            tomeID = crypto.randomUUID()
+            return tomeID;
+        } else {
+            tomeID = crypto.randomUUID();
+        return tomeID;
+
+        }
+
+    };
+
+
+    tomeTitle.id = createTomeID();
     tomeTitle.textContent += newTome.title;
     tomeAuthor.textContent += newTome.author;
     tomeDesc.textContent += newTome.description;
@@ -87,6 +99,8 @@ function addTomeToLibrary () {
     tome.appendChild(tomeAuthor);
     tome.appendChild(tomeDesc);
     tome.appendChild(tomeBtn);
+
+    console.log(tomeTitle.id);
 
     tomeBtn.addEventListener('click', () => {
 
