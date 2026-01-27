@@ -46,12 +46,15 @@ readBtn.addEventListener('click', () => {
 
 const myLibrary = [];
 
-function Tome(title, author,description) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.id;
+class Tome {
+      constructor(title,author,description) {
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.id;
+      };
 };
+
 
 
 
